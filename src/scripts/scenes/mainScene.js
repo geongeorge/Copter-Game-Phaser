@@ -19,7 +19,7 @@ export default class MainScene extends Phaser.Scene {
     new Backgrounds(this)
 
     // new PhaserLogo(this, this.cameras.main.width / 2, 0)
-    this.chopper = new Chopper(this, this.cameras.main.width / 2, 0)
+    this.chopper = new Chopper(this, this.cameras.main.width / 4, 0)
     this.fpsText = new FpsText(this)
 
     this.chopper.play('chopper_anim')

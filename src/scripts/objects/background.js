@@ -4,16 +4,12 @@ export default class Backgrounds extends Phaser.GameObjects.Group {
   constructor(scene) {
     let allImages = [
       {
-        name: 'bg-0',
+        name: 'bg-1',
         speed: 0,
       },
       {
-        name: 'bg-1',
-        speed: 0.6,
-      },
-      {
         name: 'bg-2',
-        speed: 0.9,
+        speed: 0.6,
       },
       {
         name: 'bg-3',
