@@ -5,7 +5,7 @@
   "homepage": "https://github.com/yandeu/phaser-project-template-es6#readme",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack/webpack.dev.js",
+    "start": "webpack-dev-server --config webpack/webpack.dev.js --host 0.0.0.0",
     "build": "webpack --config webpack/webpack.prod.js"
   },
   "keywords": [

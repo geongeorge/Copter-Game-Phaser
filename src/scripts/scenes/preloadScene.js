@@ -1,3 +1,5 @@
+import sprites from '../global/sprites'
+
 export default class PreloadScene extends Phaser.Scene {
   constructor() {
     super({ key: 'PreloadScene' })
@@ -5,23 +7,18 @@ export default class PreloadScene extends Phaser.Scene {
 
   preload() {
     this.load.image('phaser-logo', 'assets/img/phaser-logo.png')
-    this.load.spritesheet('chopper', 'assets/img/chopper.png', {
-      frameWidth: 278,
-      frameHeight: 110,
+
+    sprites.choppers.forEach((el) => {
+      this.load.spritesheet(el.name, el.loc, {
+        frameWidth: 278,
+        frameHeight: 110,
+      })
     })
 
     //bg layers
-    this.load.image('bg-1', 'assets/img/bg/Layer_0010_1.png')
-    this.load.image('bg-2', 'assets/img/bg/Layer_0009_2.png')
-    this.load.image('bg-3', 'assets/img/bg/Layer_0008_3.png')
-    this.load.image('bg-4', 'assets/img/bg/Layer_0007_Lights.png')
-    this.load.image('bg-5', 'assets/img/bg/Layer_0006_4.png')
-    this.load.image('bg-6', 'assets/img/bg/Layer_0005_5.png')
-    this.load.image('bg-7', 'assets/img/bg/Layer_0004_Lights.png')
-    this.load.image('bg-8', 'assets/img/bg/Layer_0003_6.png')
-    this.load.image('bg-9', 'assets/img/bg/Layer_0002_7.png')
-    this.load.image('bg-10', 'assets/img/bg/Layer_0001_8.png')
-    this.load.image('bg-11', 'assets/img/bg/Layer_0000_9.png')
+    sprites.bgs.forEach((el) => {
+      this.load.image(el.name, el.loc)
+    })
   }
 
   create() {
