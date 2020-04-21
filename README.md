@@ -1,3 +1,9 @@
+<h1 align="center">Copter</h1>
+
+Retro Copter clone with Phaser 3
+
+<img src="https://thumbs.gfycat.com/ShabbyAppropriateKid-size_restricted.gif">
+
 <h1 align="center">
   <br>
   <a href="https://github.com/yandeu/phaser-project-template-es6#readme"><img src="readme/header-es6.png" alt="header" width="600"></a>

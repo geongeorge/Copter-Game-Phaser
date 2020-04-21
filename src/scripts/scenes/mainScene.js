@@ -46,7 +46,7 @@ export default class MainScene extends Phaser.Scene {
     this.fpsText.update()
 
     // Thrust up if pressing
-    if (this.pointer.isDown) {
+    if (this.pointer.isDown || this.pointer.onTap) {
       this.chopper.thrustUp(delta)
     }
   }

@@ -17,6 +17,13 @@ export default class Chopper extends Phaser.Physics.Arcade.Sprite {
       repeat: -1,
     })
 
+    // scene.anims.create({
+    //   key: 'chopper_smoke_anim',
+    //   frames: scene.anims.generateFrameNumbers('smoke'),
+    //   frameRate: 20,
+    //   repeat: -1,
+    // })
+
     this.setCollideWorldBounds(true).setBounce(0).setGravityY(500)
 
     // flip to right
@@ -27,6 +34,9 @@ export default class Chopper extends Phaser.Physics.Arcade.Sprite {
     //   .on('pointerdown', () => {
     //     this.setVelocityY(-400)
     //   })
+
+    console.log('chpp ceeated')
+    this.play('chopper_smoke_anim')
   }
 
   thrustUp(delta) {
@@ -35,6 +45,7 @@ export default class Chopper extends Phaser.Physics.Arcade.Sprite {
     console.log(this.yVelocity)
     this.setVelocityY(vel)
   }
+
   unThrust() {
     this.yVelocity = 1
     // if (this.body.velocity.y <= 0) {

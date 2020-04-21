@@ -15,6 +15,11 @@ export default class PreloadScene extends Phaser.Scene {
       })
     })
 
+    this.load.spritesheet('smoke', 'assets/img/smoke_sheet.png', {
+      frameWidth: 383,
+      frameHeight: 220,
+    })
+
     //bg layers
     sprites.bgs.forEach((el) => {
       this.load.image(el.name, el.loc)
