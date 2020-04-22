@@ -1,8 +1,9 @@
-import sprites from '../global/sprites'
+import sprites from '../../global/sprites'
 
 export default class Chopper extends Phaser.Physics.Arcade.Sprite {
   yVelocity = 1
   yVelocityInc = 25
+  gravity = 500
 
   constructor(scene, x, y) {
     super(scene, x, y, 'chopper')
@@ -24,7 +25,7 @@ export default class Chopper extends Phaser.Physics.Arcade.Sprite {
     //   repeat: -1,
     // })
 
-    this.setCollideWorldBounds(true).setBounce(0).setGravityY(500)
+    this.setCollideWorldBounds(true).setBounce(0).setGravityY(this.gravity)
 
     // flip to right
     this.flipX = true

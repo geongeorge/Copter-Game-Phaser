@@ -1,12 +1,11 @@
 import PhaserLogo from '../objects/phaserLogo'
-import Chopper from '../objects/chopper'
+import Chopper from '../objects/chopper/chopper'
 import FpsText from '../objects/fpsText'
 import Backgrounds from '../objects/background'
 
 export default class MainScene extends Phaser.Scene {
   fpsText
   chopper
-  pointer
 
   constructor() {
     super({ key: 'MainScene' })
@@ -23,6 +22,7 @@ export default class MainScene extends Phaser.Scene {
     this.fpsText = new FpsText(this)
 
     this.chopper.play('chopper_anim')
+
     // display the Phaser.VERSION
     this.add
       .text(this.cameras.main.width - 15, 15, `Phaser v${Phaser.VERSION}`, {
@@ -36,17 +36,16 @@ export default class MainScene extends Phaser.Scene {
       this.chopper.unThrust()
     })
 
-    //set pointer
-    this.pointer = this.input.activePointer
-
     console.log(this.input)
   }
 
   update(time, delta) {
     this.fpsText.update()
 
+    //set pointer
+    let pointer = this.input.activePointer
     // Thrust up if pressing
-    if (this.pointer.isDown || this.pointer.onTap) {
+    if (pointer.isDown || pointer.onTap) {
       this.chopper.thrustUp(delta)
     }
   }
